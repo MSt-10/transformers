@@ -1433,7 +1433,7 @@ def _postprocess_for_mg(rle_masks, iou_scores, mask_boxes, amg_crops_nms_thresh=
     """
     keep_by_nms = batched_nms(
         boxes=mask_boxes.float(),
-        scores=iou_scores,
+        scores=iou_scores.float(),
         idxs=torch.zeros(mask_boxes.shape[0]),
         iou_threshold=amg_crops_nms_thresh,
     )
